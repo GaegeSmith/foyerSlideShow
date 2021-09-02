@@ -1,0 +1,19 @@
+Step 1: Create a folder for all of the media you want
+Step 2: sudo apt install feh
+Step 3: sudo apt install 
+Step 4: sudo apt install xscreensaver
+Step 5: Edit the autostart program with the following.
+	sudo nano /etc/xdg/lxsession/LXDE/autostart
+	Figure1.png
+Step 6: Edit the autostart in Pi program with the following.
+	sudo nano /etc/xdg/lxsession/LXDE-pi/autostart
+	Figure2.png
+	 
+Step 7: SCP
+	scp fileOnYourComputer pi@ip-address:Documents/FoyerScreens
+	
+Sources:
+https://www.raspberrypi.org/forums/viewtopic.php?t=129867
+https://www.instructables.com/Easy-Raspberry-Pi-Based-ScreensaverSlideshow-for-E/
+https://www.raspberrypi.org/documentation/remote-access/ssh/scp.md
+https://www.raspberrypi.org/forums/viewtopic.php?f=91&t=263294&p=1607054&hilit=vlc#p1607054
