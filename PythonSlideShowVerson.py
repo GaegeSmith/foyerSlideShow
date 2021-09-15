@@ -1,15 +1,26 @@
 import tkinter as tk
-from tkinter import filedialog as fd
+from tkinter import Image, filedialog as fd
+from tkinter import Canvas,PhotoImage
 root=tk.Tk()
+imageCanvas=tk.Tk()
+canvas = Canvas(imageCanvas,width=300,height=300)
+canvas.pack()
+imageDirList=[]
 def browseFiles():
     global fileName
     fileName = fd.askopenfilename(initialdir = "/",title = "Select a File")
 def addImage():
     browseFiles()
     print(fileName)
+    imageDirList.append(fileName)
+    print(imageDirList)
 def removeImage():
     browseFiles()
     print(fileName)
+    for i in imageDirList:
+        if fileName==i:
+            imageDirList.remove(fileName)
+    print(imageDirList)
 root.geometry("500x500")
 
 '''importFileFrame=tk.Frame()
