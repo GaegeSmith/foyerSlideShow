@@ -1,10 +1,9 @@
 import tkinter as tk
-from tkinter import Image, filedialog as fd
+from tkinter import Image,filedialog as fd
 from tkinter import Canvas,PhotoImage
 root=tk.Tk()
 imageCanvas=tk.Tk()
-canvas = Canvas(imageCanvas,width=300,height=300)
-canvas.pack()
+
 imageDirList=[]
 def browseFiles():
     global fileName
@@ -14,6 +13,11 @@ def addImage():
     print(fileName)
     imageDirList.append(fileName)
     print(imageDirList)
+    canvas = Canvas(imageCanvas,width=300,height=300)
+    canvas.pack()
+    img=PhotoImage(file="pop.png")
+    canvas.create_image(20,20,image=img)
+
 def removeImage():
     browseFiles()
     print(fileName)
