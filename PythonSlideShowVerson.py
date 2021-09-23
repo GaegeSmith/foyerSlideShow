@@ -1,34 +1,49 @@
 import tkinter as tk
-from tkinter import Image,filedialog as fd
-from tkinter import Canvas,PhotoImage
-root=tk.Tk()
-imageCanvas=tk.Tk()
+from tkinter import filedialog as fd
+from tkinter import *
+from useful import *
 
+Terminal.clear()
+
+
+def fetchImgs():
+    # global message
+    pw = getpass.getpass("Password to pi: ")
+message = ""
+
+root=tk.Tk()
+root.geometry("425x425")
 imageDirList=[]
 def browseFiles():
     global fileName
     fileName = fd.askopenfilename(initialdir = "/",title = "Select a File")
 def addImage():
     browseFiles()
-    print(fileName)
     imageDirList.append(fileName)
     print(imageDirList)
-    canvas = Canvas(imageCanvas,width=300,height=300)
-    canvas.pack()
-    img=PhotoImage(file="pop.png")
-    canvas.create_image(20,20,image=img)
 
 def removeImage():
-    browseFiles()
-    print(fileName)
-    for i in imageDirList:
-        if fileName==i:
-            imageDirList.remove(fileName)
-    print(imageDirList)
-root.geometry("500x500")
+    
+    return
 
-'''importFileFrame=tk.Frame()
-importFileFrame.grid(row=0,column=0)'''
+
+
+
+
+txtBoxFrame = tk.Frame()
+txtBoxFrame.grid(row=2, column=0)
+
+text_box = Text(
+    txtBoxFrame,
+    height=12,
+    width=40,
+
+)
+text_box.pack(expand=True)
+text_box.insert('end', message)
+text_box.config(state='disabled')
+
+
 
 removeImageFrame=tk.Frame()
 removeImageFrame.grid(row=1,column=0)
@@ -36,8 +51,7 @@ removeImageFrame.grid(row=1,column=0)
 addImageFrame=tk.Frame()
 addImageFrame.grid(row=0,column=0)
 
-'''importFileButton=tk.Button(importFileFrame,text="Import File",command=browseFiles)
-importFileButton.pack(padx=175,pady=5)'''
+
 
 addImageButton=tk.Button(addImageFrame,text="Add Image",command=addImage)
 addImageButton.pack(padx=175,pady=5)

@@ -1,15 +1,14 @@
 Step 1: Create a folder for all of the media you want
 Step 2: sudo apt install feh
-Step 3: sudo apt install 
-Step 4: sudo apt install xscreensaver
-Step 5: Edit the autostart program with the following.
+Step 3: sudo apt install xscreensaver
+Step 4: Edit the autostart program with the following.
 	sudo nano /etc/xdg/lxsession/LXDE/autostart
 	Figure1.png
-Step 6: Edit the autostart in Pi program with the following.
+Step 5: Edit the autostart in Pi program with the following.
 	sudo nano /etc/xdg/lxsession/LXDE-pi/autostart
 	Figure2.png
 	 
-Step 7: SCP
+Step 6: SCP
 	scp fileOnYourComputer pi@ip-address:Documents/FoyerScreens
 	
 Sources:
