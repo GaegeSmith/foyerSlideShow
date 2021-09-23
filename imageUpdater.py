@@ -3,20 +3,28 @@ from tkinter import filedialog as fd
 from tkinter import *
 from useful import *
 
+
+def f(name):
+    print('hello', name)
+
+
 Terminal.clear()
 
 
 def fetchImgs():
     # global message
     pw = getpass.getpass("Password to pi: ")
+
 message = ""
 
 root=tk.Tk()
 root.geometry("425x425")
 imageDirList=[]
+
 def browseFiles():
     global fileName
     fileName = fd.askopenfilename(initialdir = "/",title = "Select a File")
+
 def addImage():
     browseFiles()
     imageDirList.append(fileName)
@@ -26,12 +34,14 @@ def removeImage():
     
     return
 
+def reboot():
 
+    pass
 
 
 
 txtBoxFrame = tk.Frame()
-txtBoxFrame.grid(row=2, column=0)
+txtBoxFrame.grid(row=1, column=0)
 
 text_box = Text(
     txtBoxFrame,
@@ -45,18 +55,19 @@ text_box.config(state='disabled')
 
 
 
-removeImageFrame=tk.Frame()
-removeImageFrame.grid(row=1,column=0)
-
-addImageFrame=tk.Frame()
-addImageFrame.grid(row=0,column=0)
+btnFrame=tk.Frame()
+btnFrame.grid(row=0,column=0)
 
 
 
-addImageButton=tk.Button(addImageFrame,text="Add Image",command=addImage)
-addImageButton.pack(padx=175,pady=5)
 
-removeImageButton=tk.Button(removeImageFrame,text="Remove Image",command=removeImage)
-removeImageButton.pack(padx=175,pady=5)
+addImageButton=tk.Button(btnFrame,text="Add Image",command=addImage)
+addImageButton.grid(row=0, column=0)
 
-root.mainloop()
+removeImageButton=tk.Button(btnFrame,text="Remove Image",command=removeImage)
+removeImageButton.grid(row=1, column=0)
+
+rebootButton=tk.Button(btnFrame,text="Remove Image",command=reboot)
+rebootButton.grid(row=2, column=0)
+
+
