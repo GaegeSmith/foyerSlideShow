@@ -186,7 +186,11 @@ class Terminal:
 
     @staticmethod
     def filePath():
-        return Path(__file__).parent.absolute().__str__() + '/'
+        if os.name == 'nt':
+            slash = '\\'
+        else:
+            slash = '/'
+        return Path(__file__).parent.absolute().__str__() + slash
     
     @staticmethod
     def pause():
