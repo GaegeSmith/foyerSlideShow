@@ -13,25 +13,27 @@ for f in os.listdir(Terminal.filePath() + "imgsToAdd\\"):
 
 
 
+psScriptFile = open("rename.ps1", "w")
+psScript = ""
 
 for i in range(len(onlyfiles)):
     tmpImg = onlyfiles[i].split(".")
     pathOfImg = tmpImg[0].split("\\")
     
-
     if os.name == "nt":
+        imgName = f"{Terminal.filePath()}{pathOfImg[len(pathOfImg) - 2]}\\{i}.{tmpImg[len(tmpImg) - 1]}"
+        psScript += f"mv \"{onlyfiles[i]}\" \"{imgName}\"\n"
 
-        imgName = f"{i}.{tmpImg[len(tmpImg) - 1]}"
-        if "images" in pathOfImg:
-            Terminal.sendSysCommand("cd .\\images")
-        else:
-            Terminal.sendSysCommand("cd .\\imgsToAdd")
-        print(f'Ren "{pathOfImg[len(pathOfImg) - 1]}.{tmpImg[len(tmpImg) - 1]}" "{imgName}"')
-        # Terminal.sendSysCommand(f'Ren "{pathOfImg[len(pathOfImg) - 1]}.{tmpImg[len(tmpImg) - 1]}" "{imgName}"')
     else:
         imgName = f"{Terminal.filePath()}{pathOfImg[len(pathOfImg) - 2]}\\{i}.{tmpImg[len(tmpImg) - 1]}"
-        Terminal.sendSysCommand(f"mv {onlyfiles[i]} {imgName}")
+        Terminal.sendSysCommand(f"mv \"{onlyfiles[i]}\" \"{imgName}\"\n")
 
+if os.name == "nt":
+    psScriptFile.write(psScript)
+    psScriptFile.close()
+    # time.sleep(10)
+    Terminal.sendSysCommand(f"powershell {Terminal.filePath()}rename.ps1")
+    
 
 
 
