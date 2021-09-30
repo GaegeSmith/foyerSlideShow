@@ -1,5 +1,4 @@
 from useful import *
-Terminal.clear()
 
 
 onlyfiles = []
