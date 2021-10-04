@@ -35,6 +35,8 @@ def reboot():
         Terminal.sendSysCommand(f'powershell Copy-Item \\"{image}\\" {Terminal.filePath()}imgsToAdd\\')
     Terminal.sendSysCommand("python nameImgs.py")
     Terminal.sendSysCommand(f"powershell scp {Terminal.filePath()}imgsToAdd\\* pi@192.168.1.100:Documents/FoyerScreens")
+    Terminal.sendSysCommand(f"powershell Copy-Item {Terminal.filePath()}imgsToAdd\\* {Terminal.filePath()}images\\")
+    Terminal.sendSysCommand(f"powershell rm {Terminal.filePath()}imgsToAdd\\*")
     exit()
 
 
