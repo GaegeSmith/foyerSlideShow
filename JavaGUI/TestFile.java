@@ -10,7 +10,7 @@ import java.lang.InterruptedException;
 public class TestFile {
     JButton addImageButton;
     JButton removeImageButton;
-    public static void main(String[] args)throws IOException,InterruptedException{
+    public static void main(String[] args){
         TestFile gui = new TestFile();
         gui.startProgram();
     }
@@ -38,12 +38,26 @@ public class TestFile {
                 }
                 String fileName = chooser.getSelectedFile().getAbsolutePath();
                 System.out.println(fileName);
-                runScript();
+                TestFile gui = new TestFile();
+                try{
+                    gui.runScript();
+                }
+                catch(IOException e){
+                    System.out.println("IOException");
+                }
+                catch(InterruptedException e){
+                    System.out.println("InterruptedException");
+                }
             }
         }
     }
     class removeImage implements ActionListener{
-        public void actionPerformed(ActionEvent event){
+        public static void main(String[] args) {
+            
+        }
+        TestFile gui = new TestFile();
+        public void actionPerformed(ActionEvent event) {
+            
             JFileChooser chooser = new JFileChooser();
             int status = chooser.showOpenDialog(null);
             if (status == JFileChooser.APPROVE_OPTION) {
@@ -53,7 +67,16 @@ public class TestFile {
                 }
                 String fileName = chooser.getSelectedFile().getAbsolutePath();
                 System.out.println(fileName);
-                runScript();
+                try{
+                    gui.runScript();
+                }
+                catch(IOException e){
+                    System.out.println("IOException");
+                }
+                catch(InterruptedException e){
+                    System.out.println("InterruptedException");
+                }
+                
             }
         }
     }
