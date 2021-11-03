@@ -34,13 +34,12 @@ public class TestFile {
             if (status == JFileChooser.APPROVE_OPTION) {
                 File file = chooser.getSelectedFile();
                 if (file == null) {
-                    return;
                 }
                 String fileName = chooser.getSelectedFile().getAbsolutePath();
                 System.out.println(fileName);
                 TestFile gui = new TestFile();
                 try{
-                    gui.runScript();
+                    gui.runScript(fileName);
                 }
                 catch(IOException e){
                     System.out.println("IOException");
@@ -68,7 +67,7 @@ public class TestFile {
                 String fileName = chooser.getSelectedFile().getAbsolutePath();
                 System.out.println(fileName);
                 try{
-                    gui.runScript();
+                    gui.runScript(fileName);
                 }
                 catch(IOException e){
                     System.out.println("IOException");
@@ -76,13 +75,13 @@ public class TestFile {
                 catch(InterruptedException e){
                     System.out.println("InterruptedException");
                 }
-                
             }
         }
     }
-    public void runScript()throws IOException,InterruptedException{
+    public void runScript(String fileName)throws IOException,InterruptedException{
+        
         Runtime runtime = Runtime.getRuntime();
-        Process proc = runtime.exec("powershell C:\\Users\\padawan\\Documents\\foyerSlideShow\\JavaGUI\\testScript.ps1");
+        Process proc = runtime.exec("powershell C:\\Users\\padawan\\Documents\\foyerSlideShow\\JavaGUI\\testScript.ps1\nSet-Variable -Name \"movePath\" -Value");
         InputStream is = proc.getInputStream();
         InputStreamReader isr = new InputStreamReader(is);
         BufferedReader reader = new BufferedReader(isr);
