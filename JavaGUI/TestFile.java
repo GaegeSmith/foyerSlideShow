@@ -42,10 +42,10 @@ public class TestFile {
                     gui.runScript(fileName);
                 }
                 catch(IOException e){
-                    System.out.println("IOException");
+                    System.err.println("IOException");
                 }
                 catch(InterruptedException e){
-                    System.out.println("InterruptedException");
+                    System.err.println("InterruptedException");
                 }
             }
         }
@@ -70,18 +70,19 @@ public class TestFile {
                     gui.runScript(fileName);
                 }
                 catch(IOException e){
-                    System.out.println("IOException");
+                    System.err.println("IOException");
                 }
                 catch(InterruptedException e){
-                    System.out.println("InterruptedException");
+                    System.err.println("InterruptedException");
                 }
             }
         }
     }
     public void runScript(String fileName)throws IOException,InterruptedException{
-        
+        String[] commands = {"powershell.exe", "Set-Variable", "-Name \"fileName\" -Value \""+fileName+"\";", "C:\\Users\\padawan\\Documents\\foyerSlideShow\\JavaGUI\\testScript.ps1"};
         Runtime runtime = Runtime.getRuntime();
-        Process proc = runtime.exec("powershell C:\\Users\\padawan\\Documents\\foyerSlideShow\\JavaGUI\\testScript.ps1\nSet-Variable -Name \"movePath\" -Value");
+        //Process proc = runtime.exec("powershell C:\\Users\\padawan\\Documents\\foyerSlideShow\\JavaGUI\\testScript.ps1");
+        Process proc = runtime.exec(commands);
         InputStream is = proc.getInputStream();
         InputStreamReader isr = new InputStreamReader(is);
         BufferedReader reader = new BufferedReader(isr);
