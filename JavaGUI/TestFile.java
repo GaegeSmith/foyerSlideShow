@@ -39,7 +39,7 @@ public class TestFile {
                 System.out.println(fileName);
                 TestFile gui = new TestFile();
                 try{
-                    gui.runScript(fileName);
+                    gui.runScript(fileName,"testScript.ps1");
                 }
                 catch(IOException e){
                     System.err.println("IOException");
@@ -67,7 +67,7 @@ public class TestFile {
                 String fileName = chooser.getSelectedFile().getAbsolutePath();
                 System.out.println(fileName);
                 try{
-                    gui.runScript(fileName);
+                    gui.runScript(fileName,"removeImagePiScript.ps1");
                 }
                 catch(IOException e){
                     System.err.println("IOException");
@@ -78,8 +78,8 @@ public class TestFile {
             }
         }
     }
-    public void runScript(String fileName)throws IOException,InterruptedException{
-        String[] commands = {"powershell.exe", "Set-Variable", "-Name \"fileName\" -Value \""+fileName+"\";", "C:\\Users\\padawan\\Documents\\foyerSlideShow\\JavaGUI\\testScript.ps1"};
+    public void runScript(String fileName,String scriptName)throws IOException,InterruptedException{
+        String[] commands = {"powershell.exe", "Set-Variable", "-Name \"fileName\" -Value \""+fileName+"\";", "C:\\Users\\padawan\\Documents\\foyerSlideShow\\JavaGUI\\"+scriptName};
         Runtime runtime = Runtime.getRuntime();
         //Process proc = runtime.exec("powershell C:\\Users\\padawan\\Documents\\foyerSlideShow\\JavaGUI\\testScript.ps1");
         Process proc = runtime.exec(commands);
