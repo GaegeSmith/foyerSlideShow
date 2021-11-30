@@ -13,7 +13,7 @@ import java.io.InputStreamReader;
 import java.io.InputStream;
 import java.lang.InterruptedException;
 ```
-After you import all of the modules above type in public class insertFileNameHere {}<br>Then type inside the {} public static void main(String[] args){}<br>This is how it should look like this.<br>
+After you import all of the modules above type in public class insertFileNameHere {}<br>Then type inside the {} public static void main(String[] args){}<br>This is how it should look like.<br>
 ```
 public class TestFile {
     public static void main(String[] args){
