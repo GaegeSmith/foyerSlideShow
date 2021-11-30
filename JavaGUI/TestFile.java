@@ -39,7 +39,7 @@ public class TestFile {
                 System.out.println(fileName);
                 TestFile gui = new TestFile();
                 try{
-                    gui.runScript(fileName,"testScript.ps1");
+                    gui.runScript(fileName,"addImageToPiScript.ps1");
                 }
                 catch(IOException e){
                     System.err.println("IOException");
@@ -64,10 +64,10 @@ public class TestFile {
                 if (file == null) {
                     return;
                 }
-                String fileName = chooser.getSelectedFile().getAbsolutePath();
-                System.out.println(fileName);
+                String fileName = chooser.getSelectedFile().getName();
+                //System.out.println(fileName);
                 try{
-                    gui.runScript(fileName,"removeImagePiScript.ps1");
+                    gui.runScript(fileName,"removeImageFromPiScript.ps1");
                 }
                 catch(IOException e){
                     System.err.println("IOException");
@@ -81,7 +81,7 @@ public class TestFile {
     public void runScript(String fileName,String scriptName)throws IOException,InterruptedException{
         String[] commands = {"powershell.exe", "Set-Variable", "-Name \"fileName\" -Value \""+fileName+"\";", "C:\\Users\\padawan\\Documents\\foyerSlideShow\\JavaGUI\\"+scriptName};
         Runtime runtime = Runtime.getRuntime();
-        //Process proc = runtime.exec("powershell C:\\Users\\padawan\\Documents\\foyerSlideShow\\JavaGUI\\testScript.ps1");
+        //Process proc = runtime.exec("powershell C:\\Users\\padawan\\Documents\\foyerSlideShow\\JavaGUI\\addImageToPiScript.ps1");
         Process proc = runtime.exec(commands);
         InputStream is = proc.getInputStream();
         InputStreamReader isr = new InputStreamReader(is);
