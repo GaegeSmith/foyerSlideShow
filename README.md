@@ -21,7 +21,9 @@ public class TestFile {
     }
 }
 ```
-Next you need to create a function that is called startProgram.<br>
+Next you need to create a function that is called startProgram. Place this function after the right curly braces of the main method.<br>
 ```
-
+public void startProgram(){
+    
+}
 ```
