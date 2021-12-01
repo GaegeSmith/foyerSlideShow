@@ -21,3 +21,7 @@ public class TestFile {
     }
 }
 ```
+Next you need to create a function that is called startProgram.<br>
+```
+
+```
