@@ -34,6 +34,7 @@ public class TestFile {
             if (status == JFileChooser.APPROVE_OPTION) {
                 File file = chooser.getSelectedFile();
                 if (file == null) {
+                    return;
                 }
                 String fileName = chooser.getSelectedFile().getAbsolutePath();
                 System.out.println(fileName);
@@ -51,9 +52,6 @@ public class TestFile {
         }
     }
     class removeImage implements ActionListener{
-        public static void main(String[] args) {
-            
-        }
         TestFile gui = new TestFile();
         public void actionPerformed(ActionEvent event) {
             
