@@ -21,9 +21,29 @@ public class TestFile {
     }
 }
 ```
-Next you need to create a function that is called startProgram. Place this function after the right curly braces of the main method.<br>
+Next you need to create a method that is called startProgram. Place this methid after the right curly braces of the main method.<br>
 ```
 public void startProgram(){
     
 }
+```
+Then you need to create a frame and two button.
+```
+public class TestFile {
+    JButton addImageButton;
+    JButton removeImageButton;
+    public static void main(String[] args){
+        TestFile gui = new TestFile();
+        gui.startProgram();
+    }
+    public void startProgram(){
+        JFrame frame = new JFrame();
+        addImageButton = new JButton("Add Image");//to make a button. You can pass the button constructor the text you want on the button
+        removeImageButton = new JButton("Remove Image");//to make a button. You can pass the button constructor the text you want on the button
+    }
+```
+you could have the JButton addImageButton and JButton removeImageButton where I place it but you could also place it in the startProgram() at the start. for now let just keep it how I had it.<br>
+Next you need to register your button listener. to do the type this
+```
+
 ```
