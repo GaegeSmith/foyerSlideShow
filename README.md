@@ -27,7 +27,7 @@ public void startProgram(){
     
 }
 ```
-Then you need to create a frame and two button.
+Then you need to create a frame, two button, set frame size, and setDefaultCloseOperation.
 ```
 public class TestFile {
     JButton addImageButton;
@@ -39,11 +39,14 @@ public class TestFile {
     public void startProgram(){
         JFrame frame = new JFrame();
         addImageButton = new JButton("Add Image");//to make a button. You can pass the button constructor the text you want on the button
+        frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE); // this line makes the program quit as soon as you close the window (if you leave this out it will just sit there on the screen forever)
+        frame.setSize(300,300); //gives the frame a size, in pixels
+        frame.setVisible(true); // this makes the frame visible. if you forget this step, you won't see anything when you run this code
         removeImageButton = new JButton("Remove Image");//to make a button. You can pass the button constructor the text you want on the button
     }
 ```
-you could have the JButton addImageButton and JButton removeImageButton where I place it but you could also place it in the startProgram() at the start. for now let just keep it how I had it.<br>
-Next you need to register your button listener. to do the type this
+you could have the JButton addImageButton and JButton removeImageButton where I place it but you could also place it in the startProgram() at the start. for now let just keep it how I had it. Next you need to register your button listener. to do the type this
 ```
-
+addImageButton.addActionListener(new addImage());//register your interest with the button.
+removeImageButton.addActionListener(new removeImage());//register your interest with the button.
 ```
