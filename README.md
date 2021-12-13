@@ -45,8 +45,11 @@ public class TestFile {
         removeImageButton = new JButton("Remove Image");//to make a button. You can pass the button constructor the text you want on the button
     }
 ```
-you could have the JButton addImageButton and JButton removeImageButton where I place it but you could also place it in the startProgram() at the start. for now let just keep it how I had it. Next you need to register your button listener. to do the type this
+you could have the JButton addImageButton and JButton removeImageButton where I place it but you could also place it in the startProgram() at the start. for now let just keep it how I had it. Next you need to register your button listener and also set the button location. to do the type this
 ```
 addImageButton.addActionListener(new addImage());//register your interest with the button.
 removeImageButton.addActionListener(new removeImage());//register your interest with the button.
+frame.getContentPane().add(BorderLayout.NORTH, addImageButton); //this add the button to the frame's content pane
+frame.getContentPane().add(BorderLayout.SOUTH, removeImageButton);
 ```
+
