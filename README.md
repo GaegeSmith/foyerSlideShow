@@ -109,4 +109,14 @@ catch(InterruptedException e){
 ```
 Now copy the code insid the actionPerformed mehod insid the addImage class and place it inside the actionPerformed method in the removeImage class. There is some things you need to change. The first change is to change the getAbsolutePath() on the chooser to getName(). The next change is to change the second parameter on the runSript() to "removeImageFromPiScript.ps1"
 ## powerScript(ps1) code
-create a ps1 file called addImageToPiScript and a ps1 file called removeImageFromPiScript. 
+create a ps1 file called addImageToPiScript and a ps1 file called removeImageFromPiScript. In the addImageToPiScript.ps1 file type this
+```
+Write-host "fileName = $fileName"
+Write-output "before scp"
+scp.exe $fileName "pi@192.168.1.100:Documents/FoyerScreens/"
+Write-output "finish scp"
+```
+Then in the removeImageFromPiScript.ps1 file type this
+```
+ssh.exe "pi@192.168.1.100" "cd Documents/FoyerScreens/; rm $fileName"
+```
