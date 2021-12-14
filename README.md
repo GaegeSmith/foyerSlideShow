@@ -6,7 +6,6 @@ First you need to create a java file. Once you created it open the java file the
 import javax.swing.*;
 import java.awt.BorderLayout;
 import java.awt.event.*;
-import java.io.File;
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
@@ -21,7 +20,7 @@ public class TestFile {
     }
 }
 ```
-Next you need to create a method that is called startProgram. Place this methid after the right curly braces of the main method.<br>
+Next you need to create a method that is called startProgram. Place this method after the right curly braces of the main method.<br>
 ```
 public void startProgram(){
     
@@ -54,6 +53,27 @@ frame.getContentPane().add(BorderLayout.NORTH, addImageButton); //this add the b
 frame.getContentPane().add(BorderLayout.SOUTH, removeImageButton);
 ```
 If you run this right now it will popup an are that said erre: cannot find symbol. What this is saying is that there is no class name removeImage and also addImage.
-To fix the errer you need to create class for both of the removeImage and also addImage. To make a class you could ether create an new java file or create the class in side of this java file. To make a class type 
+To fix the errer you need to create class for both of the removeImage and also addImage. To make a class you could ether create an new java file or create the class in side of this java file. To make a class type class nameOfClass{}. But for the addImage class and removeImage class you need to implements ActionListener. place the classes right after the last bracket of the startProgram() method. Then you need to make a actionPerformed method in both of the classes the romoveImage and addImage.
+```
+class addImage implements ActionListener{
+    public void actionPerformed(ActionEvent event){
+        
+    }
+}
+```
+```
+class removeImage implements ActionListener{
+    public void actionPerformed(ActionEvent event){
+        
+    }
+}
+```
+if you run this is what will be created.
+<br>
 ![mainSrceen](https://user-images.githubusercontent.com/71509807/146052722-d078532c-7a41-4243-b7d9-ec9ced8bc1fe.png)
 <br>
+First lets start with implementing a JFileChooser in the addImage class. To start you need to type this inside the actionPerformed method
+```
+JFileChooser chooser = new JFileChooser();
+int status = chooser.showOpenDialog(null);
+```
