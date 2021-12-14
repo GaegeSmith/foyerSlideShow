@@ -107,3 +107,4 @@ catch(InterruptedException e){
     System.err.println("InterruptedException");
 }
 ```
+Now copy the code insid the actionPerformed mehod insid the addImage class and place it inside the actionPerformed method in the removeImage class. There is some things you need to change. The first change is to change the getAbsolutePath() on the chooser to getName(). The next change is to change the second parameter on the runSript() to "removeImageFromPiScript.ps1"
