@@ -45,15 +45,15 @@ public class TestFile {
     }
 }
 ```
-you could have the JButton addImageButton and JButton removeImageButton where I place it but you could also place it in the startProgram() at the start. for now let just keep it how I had it. Next you need to register your button listener and also set the button location. To do this type this
+You could have the JButton addImageButton and JButton removeImageButton where I place it or you could also place it in the startProgram() at the start. for now let just keep it how I had it. Next you need to register your button listener and also set the button location. To do this type this
 ```
 addImageButton.addActionListener(new addImage());//register your interest with the button.
 removeImageButton.addActionListener(new removeImage());//register your interest with the button.
 frame.getContentPane().add(BorderLayout.NORTH, addImageButton); //this add the button to the frame's content pane
 frame.getContentPane().add(BorderLayout.SOUTH, removeImageButton);
 ```
-If you run this right now it will popup an are that said erre: cannot find symbol. What this is saying is that there is no class name removeImage and also addImage.
-To fix the errer you need to create class for both of the removeImage and also addImage. To make a class you could ether create an new java file or create the class in side of this java file. To make a class type class nameOfClass{}. But for the addImage class and removeImage class you need to implements ActionListener. place the classes right after the last bracket of the startProgram() method. Then you need to make a actionPerformed method in both of the classes the romoveImage and addImage.
+If you run this right now it will popup an errer that said errer: cannot find symbol. What this is saying is that there is no class name removeImage and also addImage.
+To fix the errer you need to create class for both of the removeImage and also addImage. To make a class you could ether create an new java file or create the class in side of this java file. To make a class type class nameOfClass{}. But for the addImage class and removeImage class you need to implements ActionListener. Place the classes right after the last bracket of the startProgram() method. Then you need to make a actionPerformed method in both of the classes the removeImage and addImage.
 ```
 class addImage implements ActionListener{
     public void actionPerformed(ActionEvent event){
@@ -95,7 +95,7 @@ public void runScript(String fileName,String scriptName)throws IOException,Inter
 
 }
 ```
-the throws will throw out any IOException and InterruptedException errers. This will alow you to bypass these errers. Ceate this method after the removeImage class. Now lets go back the the addIImage class. You then need to type in a try and catch statement to catch the IOException and InterruptedException errers. This how the try and catch statement will look like
+The throws will throw out any IOException and InterruptedException errers. This will alow you to bypass these errers. Ceate this method after the removeImage class. Now lets go back the the addIImage class. You then need to type in a try and catch statement to catch the IOException and InterruptedException errers. This how the try and catch statement will look like
 ```
 try{
     gui.runScript(fileName,"addImageToPiScript.ps1");
