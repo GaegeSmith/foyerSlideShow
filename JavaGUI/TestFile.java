@@ -1,7 +1,6 @@
 import javax.swing.*;
 import java.awt.BorderLayout;
 import java.awt.event.*;
-import java.io.File;
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
@@ -32,10 +31,6 @@ public class TestFile {
             JFileChooser chooser = new JFileChooser();
             int status = chooser.showOpenDialog(null);
             if (status == JFileChooser.APPROVE_OPTION) {
-                File file = chooser.getSelectedFile();
-                if (file == null) {
-                    return;
-                }
                 String fileName = chooser.getSelectedFile().getAbsolutePath();
                 System.out.println(fileName);
                 TestFile gui = new TestFile();
@@ -52,18 +47,13 @@ public class TestFile {
         }
     }
     class removeImage implements ActionListener{
-        TestFile gui = new TestFile();
         public void actionPerformed(ActionEvent event) {
-            
             JFileChooser chooser = new JFileChooser();
             int status = chooser.showOpenDialog(null);
             if (status == JFileChooser.APPROVE_OPTION) {
-                File file = chooser.getSelectedFile();
-                if (file == null) {
-                    return;
-                }
                 String fileName = chooser.getSelectedFile().getName();
                 //System.out.println(fileName);
+                TestFile gui = new TestFile();
                 try{
                     gui.runScript(fileName,"removeImageFromPiScript.ps1");
                 }
