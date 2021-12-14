@@ -27,7 +27,7 @@ public void startProgram(){
     
 }
 ```
-Then you need to create a frame, two button, set frame size, and setDefaultCloseOperation.
+Then you need to create a frame, two button, set frame size, and setDefaultCloseOperation. setDefaultCloseOperation is seting what happen to the frame when you try to close the frame or screen.
 ```
 public class TestFile {
     JButton addImageButton;
@@ -44,12 +44,16 @@ public class TestFile {
         frame.setVisible(true); // this makes the frame visible. if you forget this step, you won't see anything when you run this code
         removeImageButton = new JButton("Remove Image");//to make a button. You can pass the button constructor the text you want on the button
     }
+}
 ```
-you could have the JButton addImageButton and JButton removeImageButton where I place it but you could also place it in the startProgram() at the start. for now let just keep it how I had it. Next you need to register your button listener and also set the button location. to do the type this
+you could have the JButton addImageButton and JButton removeImageButton where I place it but you could also place it in the startProgram() at the start. for now let just keep it how I had it. Next you need to register your button listener and also set the button location. To do this type this
 ```
 addImageButton.addActionListener(new addImage());//register your interest with the button.
 removeImageButton.addActionListener(new removeImage());//register your interest with the button.
 frame.getContentPane().add(BorderLayout.NORTH, addImageButton); //this add the button to the frame's content pane
 frame.getContentPane().add(BorderLayout.SOUTH, removeImageButton);
 ```
-
+If you run this right now it will popup an are that said erre: cannot find symbol. What this is saying is that there is no class name removeImage and also addImage.
+To fix the errer you need to create class for both of the removeImage and also addImage. To make a class you could ether create an new java file or create the class in side of this java file. To make a class type 
+![mainSrceen](https://user-images.githubusercontent.com/71509807/146052722-d078532c-7a41-4243-b7d9-ec9ced8bc1fe.png)
+<br>
