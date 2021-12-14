@@ -77,3 +77,33 @@ First lets start with implementing a JFileChooser in the addImage class. To star
 JFileChooser chooser = new JFileChooser();
 int status = chooser.showOpenDialog(null);
 ```
+If you run this and click on the Add Image button the file explorer will popup. then you need to type a if statement that check if status is == to JFileChooser.APPROVE_OPTION. The if statement will look like this
+```
+if (status == JFileChooser.APPROVE_OPTION) {
+
+}
+```
+Then in side the if statement type in the following
+```
+String fileName = chooser.getSelectedFile().getAbsolutePath();
+System.out.println(fileName);
+TestFile gui = new TestFile();
+```
+Before you continue you need to make a method called runScript.
+```
+public void runScript(String fileName,String scriptName)throws IOException,InterruptedException{
+
+}
+```
+the throws will throw out any IOException and InterruptedException errers. This will alow you to bypass these errers. Ceate this method after the removeImage class. Now lets go back the the addIImage class. You then need to type in a try and catch statement to catch the IOException and InterruptedException errers. This how the try and catch statement will look like
+```
+try{
+    gui.runScript(fileName,"addImageToPiScript.ps1");
+}
+catch(IOException e){
+    System.err.println("IOException");
+}
+catch(InterruptedException e){
+    System.err.println("InterruptedException");
+}
+```
