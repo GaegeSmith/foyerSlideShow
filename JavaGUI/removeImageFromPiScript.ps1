@@ -1,0 +1,1 @@
+ssh.exe "pi@192.168.1.100" "cd Documents/FoyerScreens/; rm $fileName"
