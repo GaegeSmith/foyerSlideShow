@@ -120,3 +120,13 @@ Then in the removeImageFromPiScript.ps1 file type this
 ```
 ssh.exe "pi@192.168.1.100" "cd Documents/FoyerScreens/; rm $fileName"
 ```
+## Setup for allowing to not have to type in a password when ssh into the pie
+Go to powershell and cd into ~/.ssh<br>
+If you do not have the foldee then type in mkdir .ssh<br>
+Then type in ssh-keygen -t rsa<br>
+Then ssh into the pie. Then type in mkdir -p .ssh<br>
+Then type in ls -a<br>
+ls -a will ensure that its there with this command. Open another powershell window and cd into ~/.ssh<br>
+Then type in scp .\id_rsa.pub pi:pbuttword@192.168.1.100:.ssh<br>
+Then type in mv id_rsa.pub authorized_keys<br>
+Link to websit: http://guidetojava.com/sample_doc/mydoc_no_password_prompts_scp.html
