@@ -67,7 +67,7 @@ public class TestFile {
         }
     }
     public void runScript(String fileName,String scriptName)throws IOException,InterruptedException{
-        String[] commands = {"powershell.exe", "Set-Variable", "-Name \"fileName\" -Value \""+fileName+"\";", "C:\\Users\\padawan\\Documents\\foyerSlideShow\\javaVersion\\"+scriptName};
+        String[] commands = {"powershell.exe", "Set-Variable", "-Name \"fileName\" -Value \""+fileName+"\";", "\"C:\\Users\\padawan\\Desktop\\foyerSlideShow\\exp\\v0.2 rough java with PS scripts\\" + scriptName + "\""};
         Runtime runtime = Runtime.getRuntime();
         //Process proc = runtime.exec("powershell C:\\Users\\padawan\\Documents\\foyerSlideShow\\javaVersion\\addImageToPiScript.ps1");
         Process proc = runtime.exec(commands);
