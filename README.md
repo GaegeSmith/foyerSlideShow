@@ -26,7 +26,7 @@ public void startProgram(){
     
 }
 ```
-Then you need to create a frame, two button, set frame size, and setDefaultCloseOperation. setDefaultCloseOperation is seting what happen to the frame when you try to close the frame or screen.
+Then you need to create a frame, two button, set frame size, and setDefaultCloseOperation. setDefaultCloseOperation is setting what happen to the frame when you try to close the frame or screen.
 ```
 public class TestFile {
     JButton addImageButton;
@@ -45,15 +45,15 @@ public class TestFile {
     }
 }
 ```
-You could have the JButton addImageButton and JButton removeImageButton where I place it or you could also place it in the startProgram() at the start. for now let just keep it how I had it. Next you need to register your button listener and also set the button location. To do this type this
+You could have the JButton addImageButton and JButton removeImageButton where I place it or you could also place it in the startProgram() at the start. For now let's just keep it how I had it. Next you need to register your button listener and also set the button location. To do this type this
 ```
 addImageButton.addActionListener(new addImage());//register your interest with the button.
 removeImageButton.addActionListener(new removeImage());//register your interest with the button.
 frame.getContentPane().add(BorderLayout.NORTH, addImageButton); //this add the button to the frame's content pane
 frame.getContentPane().add(BorderLayout.SOUTH, removeImageButton);
 ```
-If you run this right now it will popup an errer that said errer: cannot find symbol. What this is saying is that there is no class name removeImage and also addImage.
-To fix the errer you need to create class for both of the removeImage and also addImage. To make a class you could ether create an new java file or create the class in side of this java file. To make a class type class nameOfClass{}. But for the addImage class and removeImage class you need to implements ActionListener. Place the classes right after the last bracket of the startProgram() method. Then you need to make a actionPerformed method in both of the classes the removeImage and addImage.
+If you run this right now it will popup an error that said error: cannot find symbol. What this is saying is that there is no class name removeImage and also addImage.
+To fix the error you need to create class for both of the removeImage and also addImage. To make a class you could ether create an new java file or create the class in side of this java file. To make a class type class nameOfClass{}. But for the addImage class and removeImage class you need to implements ActionListener. Place the classes right after the last bracket of the startProgram() method. Then you need to make a actionPerformed method in both of the classes the removeImage and addImage.
 ```
 class addImage implements ActionListener{
     public void actionPerformed(ActionEvent event){
@@ -68,7 +68,7 @@ class removeImage implements ActionListener{
     }
 }
 ```
-if you run this is what will be created.
+If you run this is what will be created.
 <br>
 ![mainSrceen](https://user-images.githubusercontent.com/71509807/146052722-d078532c-7a41-4243-b7d9-ec9ced8bc1fe.png)
 <br>
@@ -95,7 +95,7 @@ public void runScript(String fileName,String scriptName)throws IOException,Inter
 
 }
 ```
-The throws will throw out any IOException and InterruptedException errers. This will alow you to bypass these errers. Ceate this method after the removeImage class. Now lets go back the the addIImage class. You then need to type in a try and catch statement to catch the IOException and InterruptedException errers. This how the try and catch statement will look like
+The throws will throw out any IOException and InterruptedException errors. This will alow you to bypass these errors. Ceate this method after the removeImage class. Now lets go back the the addIImage class. You then need to type in a try and catch statement to catch the IOException and InterruptedException errors. This how the try and catch statement will look like
 ```
 try{
     gui.runScript(fileName,"addImageToPiScript.ps1");
@@ -107,7 +107,7 @@ catch(InterruptedException e){
     System.err.println("InterruptedException");
 }
 ```
-Now copy the code insid the actionPerformed mehod insid the addImage class and place it inside the actionPerformed method in the removeImage class. There is some things you need to change. The first change is to change the getAbsolutePath() on the chooser to getName(). The next change is to change the second parameter on the runSript() to "removeImageFromPiScript.ps1"
+Now copy the code inside the actionPerformed method inside the addImage class and place it inside the actionPerformed method in the removeImage class. There is some things you need to change. The first change is to change the getAbsolutePath() on the chooser to getName(). The next change is to change the second parameter on the runSript() to "removeImageFromPiScript.ps1"
 ## powerScript(ps1) code
 create a ps1 file called addImageToPiScript and a ps1 file called removeImageFromPiScript. In the addImageToPiScript.ps1 file type this
 ```
@@ -129,4 +129,4 @@ Then type in ls -a<br>
 ls -a will ensure that its there with this command. Open another powershell window and cd into ~/.ssh<br>
 Then type in scp .\id_rsa.pub pi:pbuttword@192.168.1.100:.ssh<br>
 Then type in mv id_rsa.pub authorized_keys<br>
-Link to websit: http://guidetojava.com/sample_doc/mydoc_no_password_prompts_scp.html
+Link to website: http://guidetojava.com/sample_doc/mydoc_no_password_prompts_scp.html
